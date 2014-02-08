@@ -18,8 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------
 */
 
-#ifndef SVt2D_XY_H
-#define SVt2D_XY_H
+#ifndef t_2D_xy_H
+#define t_2D_xy_H
 
 #include <assert.h>
 #include <string>

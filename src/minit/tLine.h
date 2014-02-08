@@ -30,7 +30,7 @@ namespace rlf_minit {
 
 
 
-   /** SVLine.
+   /**
     *  A start and an end point will be handled as a line
     */
    template <typename T>

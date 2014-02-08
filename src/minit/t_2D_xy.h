@@ -357,7 +357,6 @@ namespace rlf_minit {
    // "What Every Computer Scientist Should Know About Floating-Point Arithmetic"
 
    // test float/double compare, diese Vergleiche sollen so funktionieren
-   // in SVShapeCls, void test_float()  ist ein Test im Source
    // diese differenzen und kleiner ergeben true
    //float_xy xy0(1000.0,1000.0);
    //float_xy xy1(1000.001,1000.0); // == with epsilon = 1.1920929e-006
