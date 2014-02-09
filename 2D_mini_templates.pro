@@ -78,3 +78,7 @@ LIBS += -lboost_filesystem
 
 #LIBS= -lboost_thread-mt -lboost_system -lboost_filesystem
 LIBS= -lboost_system -lboost_filesystem
+
+OTHER_FILES += \
+    lgpl-3.0.txt \
+    README.md

@@ -35,97 +35,99 @@ using std::string;
 namespace rlf_filefn {
 
 
-//   path  root_name() const;
-//    path  root_directory() const;
-//    path  root_path() const;
-//    path  relative_path() const;
-//    path  parent_path() const;
-//    path  filename() const;
-//    path  stem() const;
-//    path  extension() const;
+   //   path  root_name() const;
+   //    path  root_directory() const;
+   //    path  root_path() const;
+   //    path  relative_path() const;
+   //    path  parent_path() const;
+   //    path  filename() const;
+   //    path  stem() const;
+   //    path  extension() const;
 
-//    // query
-//    bool empty() const;
-//    bool has_root_name() const;
-//    bool has_root_directory() const;
-//    bool has_root_path() const;
-//    bool has_relative_path() const;
-//    bool has_parent_path() const;
-//    bool has_filename() const;
-//    bool has_stem() const;
-//    bool has_extension() const;
-//    bool is_absolute() const;
-//    bool is_relative() const;
+   //    // query
+   //    bool empty() const;
+   //    bool has_root_name() const;
+   //    bool has_root_directory() const;
+   //    bool has_root_path() const;
+   //    bool has_relative_path() const;
+   //    bool has_parent_path() const;
+   //    bool has_filename() const;
+   //    bool has_stem() const;
+   //    bool has_extension() const;
+   //    bool is_absolute() const;
+   //    bool is_relative() const;
 
 
- class fnimpl;
+   class fnimpl;
    class t_filename {
 
       friend class fnimpl;
 
-       fnimpl *impl;
+      fnimpl* impl;
 
 
-	public:
+   public:
       t_filename();
-      t_filename(string const& f);
-      t_filename(const std::string &path_, const std::string &filebase_, const std::string &extension_);
+      t_filename( string const& f );
+      t_filename( const std::string& path_, const std::string& filebase_, const std::string& extension_ );
       virtual ~t_filename();
-      t_filename( const t_filename & fn );
+      t_filename( const t_filename& fn );
 
-      t_filename & operator=( const t_filename &s );
+      t_filename& operator=( const t_filename& s );
 
-      bool operator==( const t_filename &s )const;
+      bool operator==( const t_filename& s )const;
 
-		// base name of file, no path,
-      void base( const std::string &f );
-
-
-		// path of file name,
-      void path( const std::string &f );
+      // base name of file, no path,
+      void base( const std::string& f );
 
 
-		// set file extension
-		// chars after a last dot in filename
+      // path of file name,
+      void path( const std::string& f );
+
+
+      // set file extension
+      // chars after a last dot in filename
       void extension( const std::string& f );
 
-		//
+      //
       std::string extension()  const;
 
-		// set filename from path, name, extension
-		void fullname( const std::string &p, const std::string &f, const std::string &e );
+      // set filename from path, name, extension
+      void fullname( const std::string& p, const std::string& f, const std::string& e );
 
       // get file + '.' + extension
       std::string filename()const;
 
-		// get 'path + file + extension'
-		std::string fullname()const;
+      // get 'path + file + extension'
+      std::string fullname()const;
 
-		// get 'drive + path', in unix 'path' only
+      // get 'drive + path', in unix 'path' only
       std::string path()const;
 
-		// get filename, without extension !!
+      // get filename, without extension !!
       std::string base() const;
 
-		std::string key()const;
+      std::string key()const;
 
       // system functions
       bool file_exists()const;
       bool path_exists()const;
+      bool is_folder()const;
 
-	};
+   };
+
 
    t_filename splitpath( string const& in ) ;
 
-   inline void operator+= ( std::vector<t_filename> &v, t_filename const &s ) {
-		v.push_back( s );
-	}
+   inline void operator+= ( std::vector<t_filename> &v, t_filename const& s ) {
+      v.push_back( s );
+   }
 
    inline void operator+=( std::vector<t_filename> &v, const std::vector<t_filename> & in ) {
-		for ( size_t i = 0; i < in.size(); i++ ) {
-			v += in[i];
-		}
-	}
+      for( size_t i = 0; i < in.size(); i++ ) {
+         v += in[i];
+      }
+   }
 
 
 } // end of namespace rlf
