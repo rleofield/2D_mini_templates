@@ -32,7 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "boost_cstdint.h"
 #include "t_2D_xy.h"
-//#include "stringhelper.h"
+#include "stringhelper.h"
 
 
 namespace rlf_hstring {

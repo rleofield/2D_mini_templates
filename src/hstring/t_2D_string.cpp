@@ -20,20 +20,24 @@
 
 
 #include "t_2D_string.h"
-#include "stringhelper.h"
+
 
 using namespace std;
 
+using rlf_minit::float_xy;
+using rlf_minit::double_xy;
+using rlf_minit::uint32_xy;
+using rlf_minit::int32_xy;
 
 namespace rlf_hstring {
 
-   std::string toString( rlf_minit::uint32_xy p ) {
+   std::string toString( uint32_xy p ) {
       return "(" + toString( p.x() ) + "," + toString( p.y() ) + ")";
    }
-   std::string toString( rlf_minit::double_xy const& p ) {
+   std::string toString( double_xy const& p ) {
       return "(" + toString( p.x(), 6, 2 ) + "," + toString( p.y(), 6, 2 ) + ")";
    }
-   std::string toString( rlf_minit::float_xy const& p ) {
+   std::string toString( float_xy const& p ) {
       return "(" + toString( p.x(), 6, 2 ) + "," + toString( p.y(), 6, 2 ) + ")";
    }
 
