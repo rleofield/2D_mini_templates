@@ -18,8 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------
 */
 
-#ifndef t_2D_xy_H
-#define t_2D_xy_H
+#ifndef tObjPositionSize_H
+#define tObjPositionSize_H
 
 #include <assert.h>
 #include <string>
@@ -28,19 +28,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
+using rlf_minit::float_xy;
+
 
 namespace rlf_minit {
 
 
-   class tObjPositionSize {
+
+
+   class t_pos_size {
    public:
 
-      tObjPositionSize(): _pos( ), _size( ) {}
-      tObjPositionSize( float_xy pos, float_xy size ): _pos( pos ), _size( size ) {}
+      t_pos_size(): _pos( ), _size( ) {}
+      t_pos_size( float_xy pos, float_xy size ): _pos( pos ), _size( size ) {}
 
-      tObjPositionSize( const tObjPositionSize& in ): _pos( in._pos ), _size( in._size )  {}
+      t_pos_size( const t_pos_size& in ): _pos( in._pos ), _size( in._size )  {}
 
-      ~tObjPositionSize() {}
+      ~t_pos_size() {}
 
       float left() const {
          return _pos.left();

@@ -64,11 +64,13 @@ HEADERS += \
     src/minit/t_2D_Matrix.h \
     src/hstring/t_2D_string.h \
     src/hstring/stringhelper.h \
-    src/hstring/gettokens.h
+    src/hstring/gettokens.h \
+    src/boost/boost_cstdint.h
 
 INCLUDEPATH += $$PWD/src
 INCLUDEPATH += $$PWD/src/minit
 INCLUDEPATH += $$PWD/src/hstring
+INCLUDEPATH += $$PWD/src/boost
 
 LIBS += -lboost_system
 LIBS += -lboost_filesystem
