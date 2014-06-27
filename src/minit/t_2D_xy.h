@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef t_2D_xy_H
 #define t_2D_xy_H
 
+#include <algorithm>
 #include <assert.h>
 #include <string>
 #include <float.h>
@@ -503,7 +504,7 @@ namespace rlf_minit {
    }
 
    inline int32_xy to_tixy( double_xy const& xy ) {
-      return int32_xy( static_cast<int32_t>(xy.x()), static_cast<int32_t>(xy.y()) );
+      return int32_xy( static_cast<int32_t>( xy.x() ), static_cast<int32_t>( xy.y() ) );
    }
 
 

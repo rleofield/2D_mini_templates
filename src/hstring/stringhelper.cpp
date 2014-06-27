@@ -17,17 +17,23 @@
  ------------------------------------------------------------------------------
 */
 
+#include <iomanip>
 
+#include <boost/lexical_cast.hpp>
 
 #include "stringhelper.h"
 
-#include <iomanip>
 #include "gettokens.h"
 
 using namespace std;
 
 
 namespace rlf_hstring {
+
+   string stringify( size_t const& val ) {
+      return boost::lexical_cast<string>( val );
+   }
+
 
    // converts a hex string to size_t
    size_t hex_to_size_t( std::string const& s )  {
@@ -63,7 +69,9 @@ namespace rlf_hstring {
    string to_hex( size_t val, size_t w ) {
       std::ostringstream o;
       o <<  std::setfill( '0' ) << std::setw( w ) << hex << val;
-      return o.str();
+      std::string s = o.str();
+      cout << s << endl;
+      return s;
    }
 
    string to_bin( size_t val, size_t l ) {
@@ -179,7 +187,8 @@ namespace rlf_hstring {
 
       size_t start = begin - str.begin();
       size_t n = last.base() - begin;
-      return str.substr( start, n );
+      string temp = str.substr( start, n );
+      return temp;
    }
 
    string trim_right( string const& str, char ch ) {
