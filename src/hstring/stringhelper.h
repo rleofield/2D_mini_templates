@@ -96,6 +96,11 @@ namespace rlf_hstring {
       o << std::setw( w ) << std::fixed << std::setprecision( prec ) << std::right << std::setfill( ' ' ) << val ;
       return  o.str();
    }
+   inline std::string toString( double val, size_t w, size_t prec, char fill ) {
+      std::ostringstream o;
+      o << std::setw( w ) << std::fixed << std::setprecision( prec ) << std::right << std::setfill( fill ) << val ;
+      return  o.str();
+   }
 
    inline std::string toString( int val, size_t w = 3 ) {
       std::ostringstream o;
@@ -104,6 +109,8 @@ namespace rlf_hstring {
    }
 
 
+   void string_to_list( std::string const& s, std::list<std::string>& l ) ;
+   void string_to_vector( std::string const& s, std::vector<std::string>& l ) ;
 
 
    namespace {
@@ -176,7 +183,7 @@ namespace rlf_hstring {
         \param val Wert, der in einen Bin-String konvertiert werden soll
         \param w Feldbreite, default = 32
    */
-   std::string to_bin( size_t val, size_t  w = 32 );
+   std::string to_bin( size_t val, size_t w = 32 );
 
    /*! \brief konvertiert einen String nach Kleinbuchstaben.
                String wird geändert, es wird keine Kopie intern erzeugt.
@@ -301,6 +308,13 @@ namespace rlf_hstring {
    std::string insert_at( std::string const& str, const std::string& insert, size_t pos ) ;
 
 
+   // merge with delimiter
+   std::string merge( std::list<std::string>  const& v, std::string const& sep ) ;
+   std::string merge( std::vector<std::string>  const& v, std::string const& sep ) ;
+
+
+
+
    ////////
    // zerlegen in Tokens
    ////////
@@ -310,7 +324,7 @@ namespace rlf_hstring {
    std::vector<std::string> split( std::string const& l, char delim );
 
 
-} // end ns    namespace hstring {
+} // end ns
 
 
 
