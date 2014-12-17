@@ -27,9 +27,10 @@ QMAKE_CXXFLAGS_DEBUG += -Wparentheses
 QMAKE_CXXFLAGS_DEBUG += -Wreturn-type
 QMAKE_CXXFLAGS_DEBUG += -Wshadow
 QMAKE_CXXFLAGS_DEBUG += -Wextra
-QMAKE_CXXFLAGS_DEBUG += -Wunused-parameter
-QMAKE_CXXFLAGS_DEBUG -= -Wwrite-strings
-QMAKE_CXXFLAGS_DEBUG -= -Wunused-variable
+QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter
+QMAKE_CXXFLAGS_DEBUG += -Wwrite-strings
+QMAKE_CXXFLAGS_DEBUG += -Wno-unused-variable
+QMAKE_CXXFLAGS_DEBUG += -Wno-unused-function
 QMAKE_CXXFLAGS_DEBUG += -Wno-unused-variable
 #QMAKE_CXXFLAGS_DEBUG += -Weffc++
 
@@ -41,7 +42,7 @@ QMAKE_CXXFLAGS_RELEASE += -Wshadow
 QMAKE_CXXFLAGS_RELEASE += -Wextra
 QMAKE_CXXFLAGS_RELEASE += -Wunused-parameter
 #QMAKE_CXXFLAGS_RELEASE -= -Wwrite-strings
-QMAKE_CXXFLAGS_RELEASE -= -Wunused-variable
+QMAKE_CXXFLAGS_RELEASE += -Wunused-variable
 QMAKE_CXXFLAGS_RELEASE += -Wno-unused-variable
 #QMAKE_CXXFLAGS_RELEASE += -Weffc++
 
