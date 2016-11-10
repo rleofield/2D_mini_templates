@@ -1,5 +1,3 @@
-
-
 /* --------------------------------------------------------------------------
     Copyright 2012 by Richard Albrecht
     richard.albrecht@rleofield.de
@@ -29,7 +27,6 @@
 #include <fstream>
 #include <iomanip>
 #include <algorithm>
-
 
 #include "gettokens.h"
 #include "stringhelper.h"

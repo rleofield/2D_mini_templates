@@ -41,6 +41,7 @@ using rlf_hstring::toString;
 using rlf_hstring::split;
 using rlf_hstring::clip_at_pos;
 using rlf_hstring::toString;
+using rlf_hstring::stringify;
 using rlf_minit::float_m2;
 using rlf_minit::float_v2;
 using rlf_minit::float_xy;
@@ -56,31 +57,29 @@ namespace {
    std::string  msgFail( string const& m, string const& testvalue, string const& correctvalue ) {
       return ( m + " ist: '" + testvalue + "'   soll: '" + correctvalue + "'" );
    }
-   std::string  msgFail( string const& m, double testvalue, double correctvalue ) {
+   inline std::string  msgFail( string const& m, double testvalue, double correctvalue ) {
       return msgFail( m, toString( testvalue ), toString( correctvalue ) );
    }
-   std::string  msgFail( string const& m, int testvalue, int correctvalue ) {
+   inline std::string  msgFail( string const& m, int testvalue, int correctvalue ) {
       return msgFail( m, toString( testvalue ), toString( correctvalue ) );
    }
-   std::string  msgFail( string const& m, size_t testvalue, size_t correctvalue ) {
+   inline std::string  msgFail( string const& m, size_t testvalue, size_t correctvalue ) {
       return msgFail( m, toString( testvalue ), toString( correctvalue ) );
    }
-   std::string  msgFail( string const& m, char testvalue, char correctvalue ) {
+   inline std::string  msgFail( string const& m, char testvalue, char correctvalue ) {
       return msgFail( m, toString( testvalue ), toString( correctvalue ) );
    }
 
 }
 
 void testPass( std::string const& f_,  size_t line, bool b, std::string const& msg ) {
-   string f = clip_at_pos( f_, 30 ) ;
-   f = toString( line ) + " " + f;
+   string _f = stringify( line ) + " " + clip_at_pos( f_, 30 );
 
+   string result = "  WRONG >>>> ";
    if( b  == true ) {
-      std::cout << setw( 40 ) << left << f << "  PASS  >>>> " << msg << endl;
-      return;
+      result = "  PASS  >>>> ";
    }
-
-   std::cout << setw( 40 ) << left << f << "  WRONG >>>> " << msg << endl;
+   std::cout << setw( 40 ) << left << _f << result << msg << endl;
 }
 
 #define VERIFY(bool1,msg) testPass(__FUNCTION__,__LINE__,bool1,msg)
@@ -116,7 +115,6 @@ void test_float() {
 
 
 void test_area() {
-   int i = 0;
    tArea<float> a( float_xy( 2, 3 ), float_xy( 5, 5 ) );
    float_xy e = a.end();
    float_xy b = a.start();

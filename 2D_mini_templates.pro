@@ -3,7 +3,7 @@
 # Project created by QtCreator 2013-10-01T22:28:55
 #
 #-------------------------------------------------
-# test commit
+
 QTEMPLATE = app
 CONFIG += console
 CONFIG -= qt
@@ -82,6 +82,7 @@ INCLUDEPATH += $$PWD/src
 INCLUDEPATH += $$PWD/src/minit
 INCLUDEPATH += $$PWD/src/hstring
 INCLUDEPATH += $$PWD/src/boost
+INCLUDEPATH += $$PWD/src/test
 
 LIBS += -lboost_system
 LIBS += -lboost_filesystem
