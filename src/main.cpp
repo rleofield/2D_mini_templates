@@ -41,6 +41,13 @@ int test_all() ;
 
 int main() {
 
+   int t = sizeof(double);
+
+   int64_t a = 0;
+   //int *pi = &a;
+
+   double pch = static_cast<double>(a);
+
    //test_matrix();
    test_all();
 
