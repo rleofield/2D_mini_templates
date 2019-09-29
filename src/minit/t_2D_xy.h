@@ -39,6 +39,49 @@ namespace rlf_minit {
    *  2D xy pairs xy_t
    */
 
+   class Encoder
+   {
+       uint8_t _pin1;
+       uint8_t _pin2;
+   public:
+       Encoder(uint8_t pin1, uint8_t pin2): _pin1(pin1),_pin2(pin2){}
+   };
+
+//   class Axis{
+//       public:
+//           Axis(int pwmPin,
+//                int directionPin1,
+//                int directionPin2,
+//                int encoderPin1, int encoderPin2, std::string axisName, int eepromAdr,
+//                float mmPerRotation): _encoder(directionPin1,directionPin2)
+//           {}
+//       private:
+//           Encoder    _encoder;
+//  };
+
+
+   class abc1 {
+    int x;
+    int y;
+  public:
+      abc1(): x( 0 ), y( 0 ) {}
+  };
+   // base class
+   class ab {
+    int x;
+    int y;
+  public:
+      ab(): x( 0 ), y( 0 ) {}
+  };
+  // derived class
+   class abc: public ab {
+    int x;
+    int y;
+  public:
+      abc(): ab(), x( 0 ), y( 0 ) {}
+  };
+
+
    template <typename T>
    class xy_t {
       T _x;
@@ -194,7 +237,7 @@ namespace rlf_minit {
          return false;
       }
 
-      bool zero()const {
+      bool is_zero()const {
          return operator==( 0 );
       }
 
